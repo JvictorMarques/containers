@@ -1,0 +1,16 @@
+name: Usando container como Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Observando o sistema operacional
+        run: cat /etc/os-release
+      - name: Execução no container
+        uses: docker://alpine:latest
+        with:
+          entrypoint: cat
+          args: /etc/os-release

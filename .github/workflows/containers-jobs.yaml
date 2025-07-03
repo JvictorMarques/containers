@@ -1,10 +1,10 @@
-name: Teste Container
+name: Usando container como Job
 
 on:
   workflow_dispatch:
 
 jobs:
-  build-test:
+  job-container:
     runs-on: ubuntu-latest
     container:
       image: python:3.10.14-alpine3.20
